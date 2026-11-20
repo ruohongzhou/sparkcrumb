@@ -15,7 +15,6 @@
     :root {
       --bg: #faf9f6;
       --bg-soft: #f7f4ee;
-
       --text: #191816;
       --muted: #6f6b64;
 
@@ -63,7 +62,6 @@
       text-rendering: optimizeLegibility;
     }
 
-
     /* =========================================================
        MAIN
        ========================================================= */
@@ -79,7 +77,6 @@
 
       isolation: isolate;
     }
-
 
     /* =========================================================
        BRAND
@@ -128,7 +125,6 @@
       line-height: 1.55;
     }
 
-
     /* =========================================================
        CLICKABLE CRUMBS
        ========================================================= */
@@ -138,8 +134,8 @@
       z-index: 5;
 
       /*
-        The visible crumb is intentionally tiny,
-        but the actual click/tap target is 44px.
+        Visible crumb is tiny.
+        Actual click/touch area is 44px.
       */
 
       width: 44px;
@@ -175,23 +171,20 @@
       opacity: var(--crumb-opacity, 0.55);
 
       transition:
-        width 180ms ease,
-        height 180ms ease,
         background 180ms ease,
         opacity 180ms ease,
         transform 180ms ease,
         box-shadow 180ms ease;
     }
 
-
-    /* A subtle clue that crumbs are interactive */
+    /* Small hint that a crumb can be touched */
 
     .crumb:hover::before {
       background: var(--crumb-hover);
 
-      opacity: 0.9;
+      opacity: 0.92;
 
-      transform: scale(1.4);
+      transform: scale(1.45);
 
       box-shadow:
         0 0 0 5px rgba(185, 169, 149, 0.08);
@@ -206,34 +199,29 @@
         0 0 0 5px rgba(238, 152, 55, 0.18);
     }
 
-
     /* =========================================================
        CRUMB POSITIONS
-
-       Mostly around the outer parts of the page,
-       with only two closer to the center.
+       Mostly scattered toward the outside.
        ========================================================= */
-
 
     /* far upper-left */
 
     .crumb.c1 {
-      top: 15%;
+      top: 14%;
       left: 7%;
 
       --crumb-size: 7px;
-      --crumb-opacity: 0.52;
+      --crumb-opacity: 0.54;
 
       animation-delay: -2s;
       animation-duration: 9.5s;
     }
 
-
-    /* far lower-left */
+    /* lower-left */
 
     .crumb.c2 {
-      top: 76%;
-      left: 10%;
+      top: 75%;
+      left: 9%;
 
       --crumb-size: 10px;
       --crumb-opacity: 0.48;
@@ -242,65 +230,73 @@
       animation-duration: 11s;
     }
 
-
     /* far upper-right */
 
     .crumb.c3 {
-      top: 13%;
+      top: 12%;
       right: 8%;
 
       --crumb-size: 6px;
-      --crumb-opacity: 0.46;
+      --crumb-opacity: 0.47;
 
       animation-delay: -3.2s;
       animation-duration: 8.7s;
     }
 
-
-    /* far lower-right */
+    /* lower-right */
 
     .crumb.c4 {
-      top: 78%;
+      top: 79%;
       right: 7%;
 
       --crumb-size: 8px;
-      --crumb-opacity: 0.55;
+      --crumb-opacity: 0.56;
 
       animation-delay: -6s;
       animation-duration: 10.3s;
     }
 
-
     /* mid-right */
 
     .crumb.c5 {
-      top: 52%;
-      right: 18%;
+      top: 51%;
+      right: 16%;
 
       --crumb-size: 6px;
-      --crumb-opacity: 0.42;
+      --crumb-opacity: 0.43;
 
       animation-delay: -1.4s;
       animation-duration: 9.1s;
     }
 
-
     /* mid-left */
 
     .crumb.c6 {
-      top: 43%;
-      left: 18%;
+      top: 42%;
+      left: 17%;
 
       --crumb-size: 5px;
-      --crumb-opacity: 0.42;
+      --crumb-opacity: 0.43;
 
       animation-delay: -4.8s;
       animation-duration: 10.7s;
     }
 
+    /* stray lower-middle crumb */
+
+    .crumb.c7 {
+      top: 68%;
+      left: 57%;
+
+      --crumb-size: 7px;
+      --crumb-opacity: 0.40;
+
+      animation-delay: -7.1s;
+      animation-duration: 12s;
+    }
 
     /* =========================================================
-       DECORATIVE SPARKS
+       TWO EXISTING SPARKS
        ========================================================= */
 
     .tiny-spark {
@@ -310,69 +306,41 @@
       color: var(--spark);
 
       line-height: 1;
-      opacity: 0.5;
 
       pointer-events: none;
 
       animation:
-        spark-twinkle 5.2s ease-in-out infinite;
+        spark-twinkle 5.4s ease-in-out infinite;
     }
 
-
-    /* left upper */
+    /*
+      One upper-ish spark on the left.
+      One lower-ish spark on the right.
+      Intentionally not symmetrical.
+    */
 
     .tiny-spark.s1 {
-      top: 31%;
+      top: 29%;
       left: 12%;
 
-      font-size: 17px;
-      opacity: 0.58;
+      font-size: 16px;
+      opacity: 0.50;
 
       animation-delay: -1.3s;
     }
 
-
-    /* left lower */
-
     .tiny-spark.s2 {
-      bottom: 20%;
-      left: 30%;
+      bottom: 19%;
+      right: 25%;
 
       font-size: 11px;
-      opacity: 0.36;
+      opacity: 0.35;
 
-      animation-delay: -3.6s;
+      animation-delay: -3.7s;
     }
-
-
-    /* right upper */
-
-    .tiny-spark.s3 {
-      top: 27%;
-      right: 13%;
-
-      font-size: 15px;
-      opacity: 0.47;
-
-      animation-delay: -2.1s;
-    }
-
-
-    /* right lower */
-
-    .tiny-spark.s4 {
-      bottom: 18%;
-      right: 28%;
-
-      font-size: 10px;
-      opacity: 0.34;
-
-      animation-delay: -4.4s;
-    }
-
 
     /* =========================================================
-       SPARK CREATED AFTER CLICK
+       TEMPORARY SPARK AFTER CLICK
        ========================================================= */
 
     .crumb-spark {
@@ -390,7 +358,6 @@
 
       color: var(--spark);
 
-      font-size: 31px;
       line-height: 1;
 
       pointer-events: none;
@@ -398,16 +365,15 @@
       filter:
         drop-shadow(
           0 2px 8px
-          rgba(238, 152, 55, 0.28)
+          rgba(238, 152, 55, 0.30)
         );
 
       animation:
         clicked-spark
-        850ms
+        900ms
         cubic-bezier(.2, .8, .3, 1)
         forwards;
     }
-
 
     /* =========================================================
        FOOTER
@@ -417,10 +383,7 @@
       position: relative;
       z-index: 10;
 
-      padding:
-        0
-        24px
-        30px;
+      padding: 0 24px 30px;
 
       text-align: center;
 
@@ -432,21 +395,12 @@
       letter-spacing: 0.005em;
     }
 
-
     /* =========================================================
-       ANIMATIONS
+       ANIMATION: CRUMBS
        ========================================================= */
 
-
-    /*
-      Crumbs wander slightly.
-
-      Larger movement than the previous version,
-      so they feel scattered rather than attached
-      to the logo.
-    */
-
     @keyframes crumb-drift {
+
       0%,
       100% {
         transform:
@@ -473,23 +427,23 @@
       }
     }
 
-
-    /*
-      Existing sparks breathe quietly.
-    */
+    /* =========================================================
+       ANIMATION: EXISTING SPARKS
+       ========================================================= */
 
     @keyframes spark-twinkle {
+
       0%,
       100% {
-        opacity: 0.3;
+        opacity: 0.28;
 
         transform:
-          scale(0.82)
+          scale(0.84)
           rotate(-5deg);
       }
 
       45% {
-        opacity: 0.85;
+        opacity: 0.82;
 
         transform:
           scale(1.14)
@@ -497,7 +451,7 @@
       }
 
       68% {
-        opacity: 0.55;
+        opacity: 0.50;
 
         transform:
           scale(0.96)
@@ -505,12 +459,12 @@
       }
     }
 
-
-    /*
-      Spark beside the SparkCrumb wordmark.
-    */
+    /* =========================================================
+       ANIMATION: LOGO SPARK
+       ========================================================= */
 
     @keyframes logo-twinkle {
+
       0%,
       100% {
         opacity: 0.76;
@@ -529,14 +483,12 @@
       }
     }
 
-
-    /*
-      Spark created when a crumb is clicked.
-
-      Pop → glow → float upward → disappear.
-    */
+    /* =========================================================
+       ANIMATION: CLICKED SPARK
+       ========================================================= */
 
     @keyframes clicked-spark {
+
       0% {
         opacity: 0;
 
@@ -546,29 +498,29 @@
           rotate(-18deg);
       }
 
-      22% {
+      20% {
         opacity: 1;
 
         transform:
           translateY(-2px)
-          scale(1.45)
+          scale(1.5)
           rotate(9deg);
       }
 
-      52% {
+      50% {
         opacity: 1;
 
         transform:
-          translateY(-7px)
-          scale(1.05)
+          translateY(-8px)
+          scale(1.08)
           rotate(-4deg);
       }
 
-      78% {
-        opacity: 0.7;
+      76% {
+        opacity: 0.72;
 
         transform:
-          translateY(-14px)
+          translateY(-15px)
           scale(0.92)
           rotate(5deg);
       }
@@ -577,12 +529,11 @@
         opacity: 0;
 
         transform:
-          translateY(-24px)
-          scale(0.55)
+          translateY(-27px)
+          scale(0.50)
           rotate(13deg);
       }
     }
-
 
     /* =========================================================
        MOBILE
@@ -599,68 +550,54 @@
         margin-top: 24px;
       }
 
-
-      /*
-        Keep crumbs around the edges on mobile too,
-        but not so close that their 44px tap target
-        extends far off-screen.
-      */
-
       .crumb.c1 {
-        top: 14%;
+        top: 13%;
         left: 1%;
       }
 
       .crumb.c2 {
         top: 76%;
-        left: 3%;
+        left: 2%;
       }
 
       .crumb.c3 {
-        top: 12%;
+        top: 11%;
         right: 1%;
       }
 
       .crumb.c4 {
-        top: 77%;
+        top: 78%;
         right: 2%;
       }
 
       .crumb.c5 {
         top: 54%;
-        right: 8%;
+        right: 6%;
       }
 
       .crumb.c6 {
-        top: 41%;
-        left: 7%;
+        top: 40%;
+        left: 5%;
       }
 
-
-      /* sparks */
+      .crumb.c7 {
+        top: 68%;
+        left: 55%;
+      }
 
       .tiny-spark.s1 {
-        top: 28%;
-        left: 8%;
+        top: 27%;
+        left: 7%;
 
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .tiny-spark.s2 {
-        bottom: 18%;
-        left: 25%;
-      }
+        bottom: 17%;
+        right: 20%;
 
-      .tiny-spark.s3 {
-        top: 25%;
-        right: 8%;
+        font-size: 10px;
       }
-
-      .tiny-spark.s4 {
-        bottom: 16%;
-        right: 21%;
-      }
-
 
       footer {
         padding-bottom: 24px;
@@ -675,10 +612,7 @@
 
   <main>
 
-
-    <!-- =====================================================
-         CLICKABLE CRUMBS
-         ===================================================== -->
+    <!-- CLICKABLE CRUMBS -->
 
     <button
       class="crumb c1"
@@ -716,10 +650,14 @@
       aria-label="Spark this crumb"
     ></button>
 
+    <button
+      class="crumb c7"
+      type="button"
+      aria-label="Spark this crumb"
+    ></button>
 
-    <!-- =====================================================
-         DECORATIVE SPARKS
-         ===================================================== -->
+
+    <!-- ONLY TWO EXISTING SPARKS -->
 
     <span
       class="tiny-spark s1"
@@ -731,20 +669,8 @@
       aria-hidden="true"
     >✦</span>
 
-    <span
-      class="tiny-spark s3"
-      aria-hidden="true"
-    >✦</span>
 
-    <span
-      class="tiny-spark s4"
-      aria-hidden="true"
-    >✦</span>
-
-
-    <!-- =====================================================
-         BRAND
-         ===================================================== -->
+    <!-- BRAND -->
 
     <section
       class="brand"
@@ -780,11 +706,6 @@
 
     function sparkCrumb(crumb) {
 
-      /*
-        Determine where the clicked crumb is
-        right now, including its drifting movement.
-      */
-
       const rect =
         crumb.getBoundingClientRect();
 
@@ -796,7 +717,33 @@
 
 
       /*
-        Create the temporary spark.
+        Slightly vary the resulting spark size.
+
+        Bigger crumb → slightly bigger spark.
+        This makes the interactions feel less cloned.
+      */
+
+      const visibleCrumb =
+        window.getComputedStyle(
+          crumb,
+          "::before"
+        );
+
+      const crumbSize =
+        parseFloat(visibleCrumb.width) || 8;
+
+      const sparkSize =
+        Math.min(
+          35,
+          Math.max(
+            25,
+            crumbSize * 3.5
+          )
+        );
+
+
+      /*
+        Create temporary spark.
       */
 
       const spark =
@@ -819,12 +766,15 @@
       spark.style.top =
         `${y}px`;
 
+      spark.style.fontSize =
+        `${sparkSize}px`;
+
       document.body.appendChild(spark);
 
 
       /*
-        Give the clicked crumb
-        a tiny playful response.
+        Give original crumb
+        a small "pop".
       */
 
       crumb.animate(
@@ -836,14 +786,14 @@
 
           {
             transform:
-              "scale(0.62)",
+              "scale(0.58)",
 
-            offset: 0.25
+            offset: 0.24
           },
 
           {
             transform:
-              "scale(1.24)",
+              "scale(1.28)",
 
             offset: 0.58
           },
@@ -862,8 +812,7 @@
 
 
       /*
-        Remove the temporary spark when
-        its animation finishes.
+        Remove temporary spark.
       */
 
       spark.addEventListener(
