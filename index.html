@@ -580,40 +580,6 @@
       }
     }
 
-
-    /* =========================================================
-       Reduced motion
-
-       Keep SparkCrumb visually alive without floating movement.
-       ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .crumb {
-        animation: none;
-      }
-
-      .tiny-spark,
-      .logo-spark {
-        animation-duration: 8s;
-        animation-timing-function: ease-in-out;
-      }
-
-      .magic {
-        animation: none;
-      }
-
-      .magic::before {
-        animation: none;
-        opacity: 0.65;
-      }
-
-      .magic::after {
-        animation: none;
-        opacity: 0;
-      }
-    }
-
   </style>
 </head>
 
